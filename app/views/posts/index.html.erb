@@ -1,9 +1,10 @@
 <div class="main posts-index">
   <div class="container">
+    <% @posts.each do |post| %>
       <div class="posts-index-item">
-        <% @posts.each do |post| %>
-          <p><%= post.content %></p>
-        <% end %>
+        <!-- 以下をlink_toメソッドを用いて書き換えてください -->
+        <%= link_to(post.content, "/posts/#{post.id}") %>
       </div>
+    <% end %>
   </div>
 </div>
